@@ -39,7 +39,23 @@ function differenceTwoDates(date1, date2) {
         years--;
     }
     return {year:years, months:months, days:days, hours:hours,
-     minutes:minutes, seconds:seconds};
+        minutes:minutes, seconds:seconds};
 }
 
-console.log(differenceTwoDates('2020/08/01 T 12:22:41', '2020/03/20 T 23:19:01'));
+//      (3)
+function timeGap(array) {
+    let sum = 0;
+    let result = [];
+    for(let i=0;;i++){
+        if(i+1 === array.length){
+            break;
+        }
+        result.push(differenceTwoDates(array[i],array[i+1]));
+    }
+    return result.reduce((a,b)=>({year:a.year+b.year,months:a.months+b.months,
+        days:a.days+b.days,hours:a.hours+b.hours,minutes: a.minutes+b.minutes,
+        seconds: a.seconds+b.seconds}));
+}
+
+
+console.log(timeGap(['2020-08-01T12:22' , '2020-02-20T23:19', '2019-02-20T20:12']));
