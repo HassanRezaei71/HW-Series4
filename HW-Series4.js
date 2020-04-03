@@ -6,9 +6,8 @@ function converToJalali(str) {
 document.getElementById('converToJalali').innerHTML = converToJalali('2020/03/02');
 
 //      (2)
-
 const monthDays = [31,28,31,30,31,30,31,31,30,31,30,31];
-function difference2Dates(date1, date2) {
+function differenceTwoDates(date1, date2) {
     date1 = date1.replace(/\s+/g, "").replace(/\//g, "-");
     date2 = date2.replace(/\s+/g, "").replace(/\//g, "-");
     date1 = new Date(date1);
@@ -39,8 +38,8 @@ function difference2Dates(date1, date2) {
         months+=12;
         years--;
     }
-    return `{year:${years}, months:${months}, days:${days}, hours:${hours},
-     minutes:${minutes}, seconds:${seconds}}`;
+    return {year:years, months:months, days:days, hours:hours,
+     minutes:minutes, seconds:seconds};
 }
 
-console.log(difference2Dates('2020/08/01 T 12:22:41', '2020/03/20 T 23:19:01'));
+console.log(differenceTwoDates('2020/08/01 T 12:22:41', '2020/03/20 T 23:19:01'));
