@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "shabnam";
+    src: url("../style/Shabnam.woff");
+}
+body{
+    padding: 15px;
+    font-family: shabnam,Tahoma;
+}
+
+#converToJalali,
+#differenceTwoDates,
+#timeGap,
+#timeZone,
+#converToJalali2,
+#subsetString,
+#keyValuePairs,
+#sortArrayObjects,
+#rangeNumber,
+#changeTime{
+    display: inline-block;
+    margin-left: 5px;
+}
+
+hr{
+    margin-bottom: 20px;
+}
